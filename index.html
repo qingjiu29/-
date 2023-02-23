@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>记录与老婆的点点滴滴</title>
+ <style>
+  body {
+   background-color: #F9B7FF;
+  }
+  .container {
+   width: 80%;
+   margin: auto;
+  }
+  h1 {
+   text-align: center;
+  }
+  button {
+   background-color: #FF69B4;
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+   cursor: pointer;
+   margin-top: 20px;
+  }
+  input[type="file"] {
+   margin-top: 10px;
+  }
+  .date-picker {
+   margin-top: 20px;
+  }
+ </style>
+</head>
+<body>
+ <div class="container">
+  <h1>记录与老婆的点点滴滴</h1>
+
+  <!-- 第一个模块：牵手照片 -->
+  <h2>牵手照片</h2>
+  <button onclick="uploadImage('couple')">上传照片</button>
+  <input type="file" id="couple-image" style="display: none;">
+  
+  <!-- 第二个模块：宝贝老婆照片 -->
+  <h2>宝贝老婆照片</h2>
+  <button onclick="uploadImage('wife')">上传照片</button>
+  <input type="file" id="wife-image" style="display: none;">
+
+  <!-- 最后一个模块：时间日期模块 -->
+  <div class="date-picker">
+   <h2>选择日期</h2>
+   <input type="date" id="date">
+   <button onclick="uploadImage('date')">上传照片</button>
+   <input type="file" id="date-image" style="display: none;">
+  </div>
+ </div>
+
+ <script>
+  // 点击按钮触发上传照片事件
+  function uploadImage(type) {
+   var imageInput;
+   switch(type) {
+    case 'couple':
+     imageInput = document.getElementById('couple-image');
+     break;
+    case 'wife':
+     imageInput = document.getElementById('wife-image');
+     break;
+    case 'date':
+     imageInput = document.getElementById('date-image');
+     break;
+    default:
+     break;
+   }
+   imageInput.click();
+   imageInput.onchange = function() {
+    // 上传照片到互联网并保存的代码
+    // 可以使用后端编程语言（如PHP）或第三方云存储服务（如七牛云）
+   }
+  }
+ </script>
+</body>
+</html>
